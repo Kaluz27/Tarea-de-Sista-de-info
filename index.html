@@ -37,8 +37,8 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="precio">precio</label>
-                            <input type="number" class="form-control" id="precio" />
+                            <label for="precio">Precio</label>
+                            <input type="number" class="form-control" id="precio" placeholder="15$" />
                             <div class="valid-feedback">Correcto!</div>
                             <div class="invalid-feedback">Que sea barato</div>
                         </div>
@@ -62,6 +62,13 @@
             </div>
             <!-- Tabla -->
             <div class="col-md-8">
+                    <div class="form-group">
+                            <label for="buscador">Buscador</label>
+                            <input type="text" class="form-control" id="buscador" />
+                        </div>
+                    <button id="buscar" type="button" class="btn btn-primary">
+                            buscar
+                        </button>
                 <table id="tabla" class="table">
                     <thead>
                         <tr>

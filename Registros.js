@@ -5,32 +5,32 @@ export default class Registro {
     }
 
 
-    _eliminarArticulo(row, articulo){
+    _eliminarArticulo(row, articulo) {
         Swal.fire({
             type: "question",
-            title : "Eliminar este articulo",
-            text : articulo.nombre,
+            title: "Eliminar este articulo",
+            text: articulo.nombre,
             showCancelButton: true,
             confirmButtonText: "Sí",
             cancelButtonText: "No"
-        }).then(result =>{
-            if(result.value){
-                let pos  = this._buscarArticulo(articulo.codigo);
+        }).then(result => {
+            if (result.value) {
+                let pos = this._buscarArticulo(articulo.codigo);
                 this._lista.splice(pos, 1);
                 row.remove();
-            } 
+            }
         })
     }
 
     _botonDeELiminar(row, articulo) {
-        
+
         let btnDelete = document.createElement("input");
         btnDelete.type = "button";
         btnDelete.value = "Eliminar";
         btnDelete.className = "btn btn-danger";
 
         btnDelete.addEventListener("click", () => {
-           this._eliminarArticulo(row,articulo)
+            this._eliminarArticulo(row, articulo)
         });
         row.cells[5].innerHTML = "";
         row.cells[5].appendChild(btnDelete)
@@ -54,13 +54,13 @@ export default class Registro {
         cellDescripcion.innerHTML = articulo.descripcion
 
         this._botonDeELiminar(row, articulo)
-        
+
         let objArticulo = {
             codigo: articulo.codigo,
             nombre: articulo.nombre,
             precio: articulo.precio,
             cantidad: articulo.cantidad,
-            arituclo:descripcion
+            arituclo: descripcion
 
         };
 
@@ -68,14 +68,16 @@ export default class Registro {
         console.log(this._lista)
     }
 
-    _buscarArticulo(nombre) {
+    _buscarArticulo(buscador) {
         let result = -1;
-
         this._lista.forEach(
             (articulo, index) => {
-                if (articulo.nombre === nombre) {
+                if (articulo.nombre === buscador) {
                     result = index;
+                    alert("el articulo existe")
                     return;
+                }else{
+                    alert("el ar articulo no existe")
                 }
             });
 
