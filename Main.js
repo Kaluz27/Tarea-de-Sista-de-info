@@ -4,7 +4,8 @@ import Articulo from "./Articulo.js"
 export default class Main {
     constructor() {
         let registro = new Registro(
-            document.querySelector("#tabla")
+            document.querySelector("#tabla"),
+            document.querySelector("#TablaReporte")
         )
         document.querySelector("#agregar").addEventListener("click", () => {
             let codigo = Number(document.querySelector("#codigo").value);
@@ -24,14 +25,12 @@ export default class Main {
             console.log(articulo.toString())
             console.log("Se añadio un articulo con exito");
         })
-
         document.querySelector("#buscar").addEventListener("click", ()=>{
 
             let buscador = document.querySelector("#buscador").value;
             registro._buscarArticulo(buscador);
         })
-
-    }
+      }
 }
 
 var main = new Main();

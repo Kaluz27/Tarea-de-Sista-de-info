@@ -1,7 +1,8 @@
 export default class Registro {
-    constructor(tabla) {
+    constructor(tabla, reporte) {
         this._tabla = tabla;
         this._lista = [];
+        this._reporte = reporte;
     }
 
 
