@@ -24,13 +24,6 @@ export default class Main {
             console.log("Se añadio un articulo con exito");
         })
 
-        document.querySelector("#borrar").addEventListener("click", () => {
-            let borrar = Number(document.querySelector("#codigoBorrado").value)
-            
-            registro._eliminarArticulo(borrar)
-            
-
-        })
     }
 }
 
